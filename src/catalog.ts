@@ -34,5 +34,5 @@ export const products: Product[] = [
   { id: 'winter', name: 'The Slow Winter Shawl', category: 'Shawls', price: 128, material: 'Wool and alpaca', dimensions: '165 × 72 cm', colors: ['Rose Oat'], description: 'An openwork triangular shawl with a light feel and a scalloped edge. Wear it over the shoulders or loosely around the neck.', leadTime: '2–3 weeks', images: ['winter', 'winter-detail'] },
 ]
 
-export const image = (key: string) => '/images/' + key + '.webp'
+export const image = (key: string) => import.meta.env.BASE_URL + 'images/' + key + '.webp'
 export const findProduct = (id: string) => products.find(product => product.id === id)

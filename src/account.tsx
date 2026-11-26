@@ -90,7 +90,7 @@ export function Account() {
       if (mode === 'register') {
         const result = await auth.signUp({ email, password, options: {
           data: { display_name: name },
-          emailRedirectTo: new URL('/profile', window.location.origin).href,
+          emailRedirectTo: new URL(import.meta.env.BASE_URL + 'profile', window.location.origin).href,
         } })
         if (result.error) throw result.error
         if (!result.data.session) setFeedback({ message: 'Check your inbox to confirm your email.' })
