@@ -245,7 +245,13 @@ Yes. Use the custom order form to describe the piece and any measurements or sha
 Where are the pieces made?|Где изготавливаются изделия?|Kur top izstrādājumi?
 Zane Made is based in Latvia.|Zane Made находится в Латвии.|Zane Made atrodas Latvijā.
 Can I order from the sample collection?|Можно заказать вещь из демонстрационной коллекции?|Vai varu pasūtīt no paraugkolekcijas?
-The catalog illustrates the styles the shop can offer. Checkout is in preview and orders are currently unavailable.|Каталог показывает возможные модели. Оформление работает в демонстрационном режиме, заказы пока недоступны.|Katalogs rāda iespējamos modeļus. Noformēšana ir demonstrācijas režīmā, un pasūtījumi pašlaik nav pieejami.
+The catalog illustrates the styles the shop can offer. Add a piece to your bag and open checkout to see whether order requests are available.|В каталоге показаны примеры изделий. Добавьте изделие в корзину и перейдите к оформлению, чтобы узнать, можно ли отправить заявку.|Katalogā ir redzami izstrādājumu piemēri. Ielieciet izstrādājumu grozā un atveriet pasūtījuma noformēšanas lapu, lai redzētu, vai var nosūtīt pasūtījuma pieteikumu.
+Order request|Заявка на заказ|Pasūtījuma pieteikums
+Zane Made order request|Заявка на заказ Zane Made|Zane Made pasūtījuma pieteikums
+Please confirm availability, price and delivery for these items:|Пожалуйста, подтвердите наличие, цену и условия доставки этих изделий:|Lūdzu, apstipriniet šo izstrādājumu pieejamību, cenu un piegādes nosacījumus:
+Open a prepared email and send it to the shop. The shop will confirm availability, the final price and delivery before you pay.|Откройте готовое письмо и отправьте его магазину. Перед оплатой магазин подтвердит наличие, итоговую цену и условия доставки.|Atveriet sagatavoto e-pasta vēstuli un nosūtiet to veikalam. Pirms apmaksas veikals apstiprinās preču pieejamību, galīgo cenu un piegādes nosacījumus.
+Open order email|Открыть письмо с заявкой|Atvērt pasūtījuma vēstuli
+Order requests will open once the shop’s email address is set up.|Отправка заявок станет доступна после настройки почты магазина.|Pasūtījuma pieteikumus varēs nosūtīt, kad būs iestatīta veikala e-pasta adrese.
 Shipping from Latvia|Отправка из Латвии|Nosūtīšana no Latvijas
 Confirm the dispatch location, packaging, carriers, and shipping options before launch.|Перед запуском нужно подтвердить место отправки, упаковку, перевозчиков и способы доставки.|Pirms atvēršanas jāapstiprina nosūtīšanas vieta, iepakojums, pārvadātāji un piegādes veidi.
 International shipping|Международная доставка|Starptautiskā piegāde

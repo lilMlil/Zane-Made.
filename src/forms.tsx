@@ -1,6 +1,5 @@
 import { productPlaceholders, showPhotography, showProductPlaceholders } from './storefront'
 import { usePreferences } from './preferences'
-import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from './cart'
 import { priceThresholds, brand, categories, findProduct, image } from './catalog'
@@ -9,7 +8,7 @@ import { CurrencyNote, Form, PageMeta } from './ui'
 const faq = [
   ['Can I request a different color or size?', 'Yes. Use the custom order form to describe the piece and any measurements or shades you have in mind.'],
   ['Where are the pieces made?', 'Zane Made is based in Latvia.'],
-  ['Can I order from the sample collection?', 'The catalog illustrates the styles the shop can offer. Checkout is in preview and orders are currently unavailable.'],
+  ['Can I order from the sample collection?', 'The catalog illustrates the styles the shop can offer. Add a piece to your bag and open checkout to see whether order requests are available.'],
 ]
 
 export function CustomOrders() {
@@ -80,26 +79,28 @@ export function Shipping() {
 export function Checkout() {
   const { t, money } = usePreferences()
   const { items } = useCart()
-  const [checked, setChecked] = useState(false)
-  function review(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setChecked(true)
-  }
+  const orderEmail = brand.email.trim()
+  const canRequestOrder = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(orderEmail) && !orderEmail.toLowerCase().endsWith('.example')
+  const subject = t("Zane Made order request")
+  const requestLines = items.map(item => {
+    const product = findProduct(item.productId)!
+    return `• ${t(product.name)} (${item.productId}) / ${t(item.color)} (${item.color}) × ${item.quantity}`
+  })
+  const requestBody = [t("Please confirm availability, price and delivery for these items:"), '', ...requestLines].join('\r\n')
+  const requestLink = `mailto:${encodeURIComponent(orderEmail).replace('%40', '@')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(requestBody)}`
+
   return <div className="container page">
-    <PageMeta title={t("Checkout Preview")} />
-    <div className="page-heading"><h1>{t("Checkout")}</h1><p>{t("Preview only. Payments and orders are unavailable.")}</p></div>
+    <PageMeta title={t("Checkout")} />
+    <div className="page-heading"><h1>{t("Checkout")}</h1></div>
     {!items.length ? <div className="empty"><h2>{t("Your bag is empty.")}</h2><Link className="button" to="/shop">{t("Continue shopping")}</Link></div> :
       <div className="checkout-layout">
-        <form className="form" onSubmit={review} onChange={() => setChecked(false)}>
-          <h2>{t("Delivery details")}</h2>
-          <div className="fields-two"><label>{t("Full name")}<input name="name" autoComplete="name" required /></label><label>{t("Email")}<input name="email" type="email" autoComplete="email" required /></label></div>
-          <label>{t("Country or region")}<input name="country" autoComplete="country-name" required /></label>
-          <label>{t("Street address")}<textarea name="address" rows={2} autoComplete="street-address" required /></label>
-          <div className="fields-two"><label>{t("City")}<input name="city" autoComplete="address-level2" required /></label><label>{t("Postal code (if applicable)")}<input name="postalCode" autoComplete="postal-code" /></label></div>
-          <label>{t("Phone (optional)")}<input type="tel" name="phone" autoComplete="tel" /></label>
-          <button className="button">{t("Validate delivery details")}</button>
-          {checked && <p className="form-feedback" role="status">{t("Delivery fields are filled in. Shipping and payment services are still pending. No order was placed.")}</p>}
-        </form>
+        <section className="form">
+          <h2>{t("Order request")}</h2>
+          {canRequestOrder ? <>
+            <p>{t("Open a prepared email and send it to the shop. The shop will confirm availability, the final price and delivery before you pay.")}</p>
+            <a className="button" href={requestLink}>{t("Open order email")}</a>
+          </> : <p>{t("Order requests will open once the shop’s email address is set up.")}</p>}
+        </section>
         <section className="checkout-summary"><h2>{t("Order summary")}</h2>
           {items.map(item => {
             const product = findProduct(item.productId)!
