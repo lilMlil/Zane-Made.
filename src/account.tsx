@@ -1,14 +1,11 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import type { Session } from '@supabase/supabase-js'
+import { supabaseClient } from './supabase'
 import { usePreferences, type Language, type Theme } from './preferences'
 import { CurrencyNote, CurrencySelect, PageMeta } from './ui'
 
-const url = import.meta.env.VITE_ZANE_SUPABASE_URL
-const key = import.meta.env.VITE_ZANE_SUPABASE_PUBLISHABLE_KEY
-const authClient = url && key
-  ? import('@supabase/supabase-js').then(({ createClient }) => createClient(url, key).auth)
-  : null
+const authClient = supabaseClient?.then(client => client.auth) ?? null
 const profileKey = 'zane-preview-profile'
 
 export function Settings() {

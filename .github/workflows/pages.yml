@@ -29,6 +29,8 @@ jobs:
       - name: Build site
         run: npm run build -- --mode github-pages
         env:
+          VITE_ZANE_SUPABASE_URL: ${{ vars.VITE_ZANE_SUPABASE_URL }}
+          VITE_ZANE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_ZANE_SUPABASE_PUBLISHABLE_KEY }}
           ZANE_PAGES_BASE: ${{ steps.pages.outputs.base_path }}/
       - name: Add fallback for direct links
         run: cp dist/index.html dist/404.html

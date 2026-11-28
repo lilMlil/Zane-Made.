@@ -1,7 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { filterStoredItems, updateCart } from '../src/cart'
 import { copyKeys, validCopy } from '../src/copy'
 import { createMoneyFormatter } from '../src/currency'
+import { readPreferences } from '../src/preferences'
 import { translations } from '../src/translations'
 
 const line = { productId: 'sunday', color: 'Oat Milk', quantity: 2 }
@@ -50,4 +51,16 @@ describe('currency', () => {
 it('has Latvian and Russian copy with intact placeholders', () => {
   const missing = copyKeys.filter(key => !translations[key]?.every(value => value && validCopy(key, value)))
   expect(missing).toEqual([])
+})
+
+
+it('starts in Latvian and keeps a previously selected language', () => {
+  const getItem = vi.fn().mockReturnValueOnce(null).mockReturnValueOnce('{"language":"ru"}')
+  vi.stubGlobal('localStorage', { getItem })
+  try {
+    expect(readPreferences().language).toBe('lv')
+    expect(readPreferences().language).toBe('ru')
+  } finally {
+    vi.unstubAllGlobals()
+  }
 })

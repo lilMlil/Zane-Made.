@@ -1,3 +1,4 @@
+import { ProductFeedback } from './product-feedback'
 import { productPlaceholders, showPhotography, showProductPlaceholders } from './storefront'
 import { usePreferences } from './preferences'
 import { useState } from 'react'
@@ -120,6 +121,7 @@ function ProductDetail({ product, openCart }: { product: Product, openCart: () =
         <div className="handmade-note"><h2>{t("Made by hand, just for you.")}</h2><p>{t("Small variations in stitch, size and texture are part of making each piece by hand.")}</p></div>
       </div>
     </div>
+    <ProductFeedback productId={product.id} />
     <div className="related"><h2>{t("Explore more pieces")}</h2><ProductGrid products={products.filter(item => item.id !== product.id).slice(0, 4)} /></div>
   </div>
 }

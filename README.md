@@ -56,3 +56,9 @@ Set `showProductPlaceholders` to `false` in `src/storefront.ts` when the individ
 - `.openai/hosting.json` identifies the existing ChatGPT Sites preview and its output directory. GitHub Pages uses `.github/workflows/pages.yml`. Set the optional build-time `ZANE_SITE_URL` to the canonical site URL with a trailing slash if the public address changes. On a subpath such as GitHub Pages, submit the generated sitemap URL directly to search engines. Crawlers read robots.txt from the host root.
 - Use `.env.example` as a template. The form API must accept the additional `newsletter` kind with an `email` field. The server must send a time-limited confirmation link and activate the subscription only after confirmation. Custom-order `budget` values are `under-low`, `low-middle`, `middle-high`, `over-high` or empty. Interpret them using the EUR thresholds in `src/catalog.ts` regardless of display currency.
 - Run `npm run lint` and `npm test` before publishing. If analytics is added later, implement consent first and load analytics only after opt-in.
+
+## Product reviews and comments
+
+Run [supabase/product-feedback.sql](supabase/product-feedback.sql) in the SQL Editor of the same Supabase project used for customer accounts. Set the GitHub Actions repository variables `VITE_ZANE_SUPABASE_URL` and `VITE_ZANE_SUPABASE_PUBLISHABLE_KEY` to the project URL and public publishable key, then redeploy GitHub Pages. For local development use the same variables in `.env.local`.
+
+Signed-in visitors can leave a review with a rating or a comment without one. In the Supabase Table Editor, check new rows in `product_feedback` and set `approved` to true for entries ready to publish. Only approved entries are visible on the storefront. If catalog IDs change, update the table's product ID constraint to match.

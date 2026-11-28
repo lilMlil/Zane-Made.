@@ -4,7 +4,7 @@ import { baseCopy, defaultCopy, readDraft, saveDraft, type CopyOverrides } from 
 
 export type Language = 'en' | 'ru' | 'lv'
 export type Theme = 'light' | 'dark' | 'system'
-const defaults = { language: 'en' as Language, theme: 'light' as Theme, currency: 'EUR' as Currency }
+const defaults = { language: 'lv' as Language, theme: 'light' as Theme, currency: 'EUR' as Currency }
 
 export function readPreferences(): typeof defaults {
   try {

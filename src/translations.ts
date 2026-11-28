@@ -1,9 +1,9 @@
 const entries = `
 Woman wrapped in a hand-knit ivory scarf|Женщина в вязаном шарфе цвета слоновой кости|Sieviete ar adītu ziloņkaula krāsas šalli
-Handmade textiles from Latvia|Текстиль ручной работы из Латвии|Ar rokām darināti rokdarbi no Latvijas.
+Handmade textiles from Latvia|Текстиль ручной работы из Латвии|Ar rokām darināti tekstilizstrādājumi no Latvijas
 Made slowly.|Сделано неспешно.|Darināts nesteidzoties.
 Made with love.|Сделано с любовью.|Darināts ar mīlestību.
-Made to last.|Сделано надолго.|Darināts ilgam laikam.
+Made to last.|Сделано надолго.|Darināts, lai kalpotu ilgi.
 Handcrafted textile pieces made with care, texture, and a little bit of magic.|Текстиль ручной работы, в котором есть забота, фактура и немного волшебства.|Ar rūpēm darināti tekstilizstrādājumi ar izteiksmīgu faktūru un mazliet maģijas.
 Shop Collection|Смотреть коллекцию|Apskatīt kolekciju
 Discover Our Story|Узнать нашу историю|Iepazīt mūsu stāstu
@@ -21,7 +21,7 @@ A little more personal.|Чуть ближе к сердцу.|Mazliet personiskā
 Read our story|Читать нашу историю|Lasīt mūsu stāstu
 Find your fit.|Найдите своё.|Atrodiet savējo.
 View collections|Смотреть коллекции|Apskatīt kolekcijas
-The making|Как мы создаём|Tapšanas process
+The making|Как рождаются изделия|Kā top izstrādājumi
 Made by hand,|Ручная работа,|Darināts ar rokām,
 never in a hurry.|без спешки.|bez steigas.
 Each piece starts with yarn and a small stitch sample. The finished textile is shaped and checked by hand. Small variations in tension and texture give each piece its own character.|Каждое изделие начинается с пряжи и небольшого образца вязки. Готовую вещь формуем и проверяем вручную. Небольшие различия в натяжении нити и фактуре придают ей характер.|Katrs darbs sākas ar dziju un nelielu adījuma paraugu. Gatavo darbu izveido vajadzīgajā formā un pārbauda ar rokām. Nelielas spriegojuma un faktūras atšķirības piešķir tam raksturu.
@@ -32,10 +32,10 @@ Custom Orders|Индивидуальные заказы|Individuālie pasūtīju
 Dream it.|Представьте.|Iztēlojieties.
 We’ll make it.|Мы воплотим.|Mēs to darināsim.
 Have a specific color, size, or idea in mind? Let’s create something made just for you.|Есть пожелания по цвету, размеру или дизайну? Давайте создадим вещь специально для вас.|Vai padomā ir kāda krāsa, izmērs vai ideja? Izveidosim ko īpaši jums.
-Request a Custom Piece|Заказать по своим меркам|Pieteikt individuālu pasūtījumu
+Request a Custom Piece|Запросить индивидуальный заказ|Pieteikt individuālu pasūtījumu
 Learn about the materials, making process and philosophy behind Zane Made.|Узнайте о материалах, процессе и философии Zane Made.|Iepazīstiet Zane Made materiālus, tapšanas procesu un filozofiju.
 Every piece has a story.|У каждой вещи есть история.|Katram izstrādājumam ir savs stāsts.
-This one begins with yarn.|Эта начинается с пряжи.|Šis sākas ar dziju.
+This one begins with yarn.|Эта история начинается с пряжи.|Šis stāsts sākas ar dziju.
 Cream wool being knit by hand|Ручное вязание из кремовой шерсти|Krēmkrāsas vilnas adījums top ar rokām
 Why handmade matters|Почему важна ручная работа|Kāpēc roku darbs ir svarīgs
 Making a piece by hand leaves room to adjust the stitch, change the edge, and notice how the yarn behaves. These small decisions shape how a piece feels when you wear it.|Ручная работа позволяет менять вязку и край и замечать, как ведёт себя пряжа. От этих решений зависит, как вещь ощущается на теле.|Roku darbs ļauj pielāgot valdziņus, mainīt malu un novērot dziju. Šie lēmumi nosaka sajūtu, valkājot izstrādājumu.
@@ -48,7 +48,7 @@ Make time for the details. Choose a shape that works with everyday clothes. Make
 Plan a custom scarf, wrap, hat or blanket with Zane Made.|Придумайте свой шарф, палантин, шапку или плед вместе с Zane Made.|Izplānojiet savu šalli, plecu lakatu, cepuri vai segu kopā ar Zane Made.
 Tell us about a textile you’d love to wear, gift, or keep close at home.|Расскажите, какую вещь вы хотели бы носить, подарить или оставить дома.|Pastāstiet, kādu izstrādājumu gribētu valkāt, uzdāvināt vai izmantot mājās.
 Yarn and knitting on a worktable|Пряжа и вязание на рабочем столе|Dzija un adījums uz darba galda
-Make it yours.|Вещь по-вашему.|Darināts jums.
+Make it yours.|Сделаем по вашим пожеланиям.|Darināsim pēc jūsu vēlmēm.
 Think of a longer scarf in a favorite color, a shoulder wrap sized for you, or a blanket that fits your reading chair.|Это может быть длинный шарф любимого цвета, палантин по вашим меркам или плед для кресла.|Tā var būt garāka šalle mīļākajā krāsā, piemērota izmēra plecu lakats vai sega lasīšanas krēslam.
 Submit inquiry|Отправить запрос|Nosūtīt pieprasījumu
 Email address|Электронная почта|E-pasta adrese
@@ -98,7 +98,7 @@ Delivery fields are filled in. Shipping and payment services are still pending. 
 Order summary|Состав заказа|Pasūtījuma kopsavilkums
 · Qty|· Кол-во|· Skaits
 Subtotal · EUR| Подытог · EUR|Starpsumma · EUR
-Shipping, taxes and duties are pending configuration.|Настройки доставки, налогов и пошлин ещё не готовы.|Piegādes, nodokļu un muitas iestatījumi vēl nav sagatavoti.
+Shipping, taxes and duties are pending configuration.|Стоимость доставки, налоги и пошлины уточняются.|Piegādes izmaksas, nodokļus un muitas nodevas vēl precizēsim.
 Skip to content|Перейти к содержимому|Pāriet uz saturu
 Categories|Категории|Kategorijas
 Product categories|Категории изделий|Izstrādājumu kategorijas
@@ -126,7 +126,7 @@ No pieces found.|Изделия не найдены.|Neviens izstrādājums nav 
 Try a different search or clear your filters.|Попробуйте другой запрос или сбросьте фильтры.|Izmēģiniet citu meklējumu vai notīriet filtrus.
 Collections|Коллекции|Kolekcijas
 Shop by Collection|Выбрать коллекцию|Izvēlieties kolekciju
-Find a warm layer to wear or a soft one to bring home.|Выберите тёплую вещь для прогулок или мягкую — для дома.|Atrodiet siltu apģērba kārtu vai ko mīkstu mājām.
+Find a warm layer to wear or a soft one to bring home.|Выберите тёплую вещь для себя или что-нибудь мягкое для дома.|Atrodiet ko siltu, ko uzvilkt, vai ko mīkstu mājām.
 Breadcrumb|Навигационная цепочка|Navigācijas ceļš
 Shop|Магазин|Veikals
 Sample piece|Образец изделия|Izstrādājuma paraugs
@@ -351,6 +351,22 @@ Spot clean first. If washing is needed, hand wash in cool water and dry flat awa
 Measure around your head just above your eyebrows and ears. Compare the circumference with the product measurements.|Измерьте обхват головы чуть выше бровей и ушей. Сравните его с размерами изделия.|Izmēriet galvas apkārtmēru nedaudz virs uzacīm un ausīm. Salīdziniet to ar izstrādājuma izmēriem.
 Length is measured end to end. Check the width and length against a scarf you already like.|Длина измеряется от края до края. Сравните ширину и длину с шарфом, который вам уже подходит.|Garumu mēra no viena gala līdz otram. Salīdziniet platumu un garumu ar šalli, kas jums jau patīk.
 Compare the width and length with the area you want to cover. Measure any extra drape separately.|Сравните ширину и длину с поверхностью, которую хотите накрыть. Отдельно учтите свисающие края.|Salīdziniet platumu un garumu ar laukumu, ko vēlaties pārklāt. Pārkares daļu izmēriet atsevišķi.
+Customer reviews and comments|Отзывы и комментарии|Klientu atsauksmes un komentāri
+Reviews and comments are currently unavailable.|Отзывы и комментарии пока недоступны.|Atsauksmes un komentāri pašlaik nav pieejami.
+Loading reviews and comments…|Загружаем отзывы и комментарии…|Ielādējam atsauksmes un komentārus…
+Reviews and comments could not be loaded.|Не удалось загрузить отзывы и комментарии.|Neizdevās ielādēt atsauksmes un komentārus.
+No reviews or comments yet.|Отзывов и комментариев пока нет.|Vēl nav atsauksmju vai komentāru.
+Comment|Комментарий|Komentārs
+Rating: {rating} out of 5|Оценка: {rating} из 5|Vērtējums: {rating} no 5
+Leave a rating and review, or post a comment without a rating. Entries appear after moderation.|Оставьте отзыв с оценкой или комментарий без оценки. Записи появляются после проверки.|Atstājiet atsauksmi ar vērtējumu vai komentāru bez vērtējuma. Ieraksti tiek publicēti pēc pārbaudes.
+Rating (optional)|Оценка (необязательно)|Vērtējums (pēc izvēles)
+Comment without rating|Комментарий без оценки|Komentārs bez vērtējuma
+Your review or comment|Ваш отзыв или комментарий|Jūsu atsauksme vai komentārs
+Write a review or comment.|Напишите отзыв или комментарий.|Uzrakstiet atsauksmi vai komentāru.
+Submit for moderation|Отправить на проверку|Nosūtīt pārbaudei
+Your entry was sent for moderation.|Ваша запись отправлена на проверку.|Jūsu ieraksts ir nosūtīts pārbaudei.
+Your entry could not be sent. Please try again.|Не удалось отправить запись. Попробуйте ещё раз.|Neizdevās nosūtīt ierakstu. Lūdzu, mēģiniet vēlreiz.
+Sign in to leave a review or comment|Войдите, чтобы оставить отзыв или комментарий|Pierakstieties, lai atstātu atsauksmi vai komentāru
 `
 
 export const translations: Record<string, [string, string]> = Object.fromEntries(
