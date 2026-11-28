@@ -3,7 +3,7 @@ import { usePreferences } from './preferences'
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { ChevronRight, Search, ShoppingBag, X } from 'lucide-react'
-import { priceThresholds, categories, findProduct, image, products, type Product } from './catalog'
+import { materialCare, sizeGuide, priceThresholds, categories, findProduct, image, products, type Product } from './catalog'
 import { useCart } from './cart'
 import { CategoryGrid, CurrencyNote, CurrencySelect, PageMeta, ProductGrid, Quantity } from './ui'
 
@@ -94,6 +94,8 @@ function ProductDetail({ product, openCart }: { product: Product, openCart: () =
   const [color, setColor] = useState(product.colors[0])
   const { add } = useCart()
   const name = t(product.name).trim() || t("Product {id}").replace("{id}", product.id)
+  const care = materialCare[product.material]
+  const sizing = product.category && sizeGuide[product.category]
   const description = t(showProductPlaceholders ? productPlaceholders.description : product.description)
   return <div className="container page product-page">
     <PageMeta title={name} description={description} />
@@ -112,6 +114,8 @@ function ProductDetail({ product, openCart }: { product: Product, openCart: () =
         <div className="purchase"><Quantity value={quantity} change={setQuantity} /><button className="button" onClick={() => { add(product.id, color, quantity); openCart() }}><ShoppingBag size={17} />{" "}{t("Add to Bag")}</button></div>
         <dl className="specs"><div><dt>{t("Materials")}</dt><dd>{t(product.material)}</dd></div>{!showProductPlaceholders && <><div><dt>{t("Dimensions")}</dt><dd>{t(product.dimensions)}</dd></div><div><dt>{t("Sample production time")}</dt><dd>{t(product.leadTime)}</dd></div></>}</dl>
         {showProductPlaceholders && <p className="specs-placeholder">{t(productPlaceholders.description)}</p>}
+        {care && <details><summary>{t("Care instructions")}</summary><p>{t(care)}</p></details>}
+        {sizing && <details><summary>{t("Size guide")}</summary><p>{t(sizing)}</p></details>}
         <Link className="text-link" to="/shipping">{t("Shipping &amp; Returns")}</Link>
         <div className="handmade-note"><h2>{t("Made by hand, just for you.")}</h2><p>{t("Small variations in stitch, size and texture are part of making each piece by hand.")}</p></div>
       </div>

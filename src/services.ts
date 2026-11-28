@@ -1,4 +1,4 @@
-export type FormKind = 'contact' | 'custom'
+export type FormKind = 'contact' | 'custom' | 'newsletter'
 
 export interface ShippingAddress {
   name: string
@@ -30,10 +30,11 @@ export interface CommerceProvider {
 export async function submitForm(kind: FormKind, data: FormData) {
   const path = import.meta.env.VITE_FORM_ENDPOINT
   if (!path) {
+    if (kind === 'newsletter') return 'Preview only. No confirmation email was sent.'
     return 'Your draft passed validation. This preview does not send messages.'
   }
   data.set('kind', kind)
   const response = await fetch(path, { method: 'POST', body: data })
   if (!response.ok) throw new Error('Something went wrong. Please try again.')
-  return 'Your message was sent.'
+  return kind === 'newsletter' ? 'Check your inbox to confirm your subscription.' : 'Your message was sent.'
 }

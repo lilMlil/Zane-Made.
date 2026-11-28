@@ -367,3 +367,8 @@ textarea { resize: vertical; }
 
 .footer-social { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; font-size: .875rem; color: #f0e3d7; }
 .footer-question { margin-top: .4rem; text-decoration: underline; text-underline-offset: .2em; }
+
+.footer-legal { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 1.5rem; font-size: .875rem; }
+.footer-legal a { text-decoration: underline; text-underline-offset: .2em; }
+.product-info details { margin-block: .65rem; }
+.product-info summary { cursor: pointer; }

@@ -1,5 +1,6 @@
-import { brand, categories, products } from './catalog'
+import { brand, categories, materialCare, products, sizeGuide } from './catalog'
 import published from './published-copy.json'
+import { legalPages } from './legal-content'
 import { productPlaceholders } from './storefront'
 import { translations } from './translations'
 
@@ -9,6 +10,9 @@ export type CopyOverrides = Partial<Record<CopyLanguage, Record<string, string>>
 
 export const copyKeys = [...new Set([
   ...Object.keys(translations),
+  ...Object.values(materialCare),
+  ...Object.values(sizeGuide),
+  ...Object.values(legalPages).flatMap(page => [page.title, ...page.sections.flat()]),
   ...Object.values(productPlaceholders),
   brand.announcement, brand.founderStory, brand.email,
   ...categories.flatMap(({ name, label }) => [name, label]),

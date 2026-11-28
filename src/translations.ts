@@ -286,6 +286,65 @@ Text saved in this browser.|Текст сохранён в этом браузе
 Published text restored.|Опубликованный текст восстановлен.|Publicētais teksts atjaunots.
 Changes imported into this browser.|Правки импортированы в этот браузер.|Labojumi importēti šajā pārlūkā.
 Could not import this text file.|Не удалось импортировать файл с правками.|Neizdevās importēt labojumu failu.
+Zane|Zane|Zane
+Made|Made|Made
+Zane Made|Zane Made|Zane Made
+Facebook|Facebook|Facebook
+TikTok|TikTok|TikTok
+YouTube|YouTube|YouTube
+hello@zanemade.example|hello@zanemade.example|hello@zanemade.example
+Nosaukums|Nosaukums|Nosaukums
+Apraksts|Apraksts|Apraksts
+Cena|Cena|Cena
+{low} – {high}|{low} – {high}|{low} – {high}
+Product {id}|Товар {id}|Izstrādājums {id}
+Privacy Policy|Политика конфиденциальности|Privātuma politika
+Terms of Sale|Условия продажи|Pārdošanas noteikumi
+Legal Notice|Сведения о продавце|Juridiskā informācija
+Legal information|Юридическая информация|Juridiskā informācija
+Draft for legal review before launch.|Черновик. Требуется юридическая проверка перед запуском.|Projekts juridiskai pārbaudei pirms veikala atvēršanas.
+Who handles your data|Кто обрабатывает ваши данные|Kas apstrādā jūsu datus
+[Add the data controller’s name, address and privacy contact.]|[Укажите имя и адрес оператора данных, а также контакт по вопросам конфиденциальности.]|[Norādiet datu pārziņa vārdu vai nosaukumu, adresi un saziņas kontaktu privātuma jautājumiem.]
+Forms and accounts|Формы и аккаунты|Veidlapas un konti
+Contact forms ask for your name, email and message. Custom orders ask for your email, order details and any optional image you attach. If enabled, accounts use your email and display name.|Форма связи запрашивает имя, email и сообщение. Для индивидуальных заказов нужны email и сведения о заказе, изображение можно приложить по желанию. При включённой регистрации аккаунт использует ваш email и отображаемое имя.|Saziņas veidlapā tiek prasīts vārds, e-pasts un ziņa. Individuālam pasūtījumam nepieciešams e-pasts un pasūtījuma informācija, un pēc izvēles var pievienot attēlu. Ja konti ir iespējoti, tajos izmanto e-pastu un redzamo vārdu.
+Purpose and retention|Цели обработки и хранение|Apstrādes mērķi un glabāšana
+We use your details to reply, handle custom requests or manage your account. If you request the newsletter, your email is used to send a confirmation link. You receive newsletters only after confirming. [Confirm legal bases, recipients, retention periods and any international transfers.]|Мы используем ваши данные для ответа, обработки индивидуальных запросов или управления аккаунтом. Если вы запросите подписку, на ваш email придёт ссылка для подтверждения. Рассылка начнётся после подтверждения. [Уточните правовые основания, получателей, сроки хранения и возможную международную передачу.]|Jūsu datus izmantojam, lai atbildētu, apstrādātu individuālus pieprasījumus vai pārvaldītu kontu. Ja piesakāties jaunumiem, uz jūsu e-pastu nosūtām apstiprinājuma saiti. Jaunumus saņemsiet pēc apstiprināšanas. [Precizējiet tiesisko pamatu, saņēmējus, glabāšanas termiņus un iespējamo starptautisko pārsūtīšanu.]
+Your choices|Ваши права|Jūsu tiesības
+[Add how to request access, correction, deletion or other applicable rights, and how to complain to the relevant authority.]|[Укажите, как запросить доступ, исправление или удаление данных, воспользоваться другими применимыми правами и подать жалобу в компетентный орган.]|[Norādiet, kā pieprasīt piekļuvi datiem, labošanu vai dzēšanu, izmantot citas piemērojamās tiesības un iesniegt sūdzību kompetentajai iestādei.]
+Browser storage|Хранилище браузера|Pārlūka krātuve
+The store saves preferences and cart items in your browser. The preview profile and text drafts also use browser storage.|Магазин сохраняет настройки и корзину в браузере. Демонстрационный профиль и черновики текстов тоже хранятся там.|Veikals saglabā iestatījumus un groza saturu pārlūkā. Tur glabājas arī demonstrācijas profils un tekstu melnraksti.
+Seller and ordering|Продавец и оформление заказа|Pārdevējs un pasūtīšana
+[Add seller identity, acceptance steps and the point when an order becomes binding.]|[Укажите данные продавца, порядок принятия заказа и момент, когда заказ становится обязательным.]|[Norādiet pārdevēja datus, pasūtījuma pieņemšanas kārtību un brīdi, kad pasūtījums kļūst saistošs.]
+Prices and delivery|Цены и доставка|Cenas un piegāde
+[Confirm currency, taxes, shipping charges, payment terms and delivery commitments.]|[Уточните валюту, налоги, стоимость доставки, условия оплаты и обязательства по доставке.]|[Precizējiet valūtu, nodokļus, piegādes izmaksas, apmaksas noteikumus un piegādes saistības.]
+Cancellations and complaints|Отмена и претензии|Atcelšana un sūdzības
+[Confirm withdrawal, returns, statutory remedies and the complaint process.]|[Уточните условия отказа и возврата, предусмотренные законом средства защиты и порядок подачи претензий.]|[Precizējiet atteikuma un atgriešanas kārtību, likumā paredzētos tiesiskās aizsardzības līdzekļus un sūdzību iesniegšanu.]
+Seller name|Имя или наименование продавца|Pārdevēja vārds vai nosaukums
+[Add the seller’s legal name.]|[Укажите юридическое имя или наименование продавца.]|[Norādiet pārdevēja juridisko vārdu vai nosaukumu.]
+Registration number|Регистрационный номер|Reģistrācijas numurs
+[Add the registration number and register.]|[Укажите регистрационный номер и реестр.]|[Norādiet reģistrācijas numuru un reģistru.]
+Registered address|Юридический адрес|Juridiskā adrese
+[Add the registered postal address.]|[Укажите зарегистрированный почтовый адрес.]|[Norādiet reģistrēto pasta adresi.]
+VAT ID|Номер плательщика НДС|PVN maksātāja numurs
+[Add the VAT ID, if applicable.]|[Укажите номер плательщика НДС, если применимо.]|[Norādiet PVN maksātāja numuru, ja piemērojams.]
+[Add the seller’s monitored email address and any required contact details.]|[Укажите действующий email продавца и другие обязательные контактные данные.]|[Norādiet pārdevēja regulāri pārbaudītu e-pasta adresi un citu obligāto kontaktinformāciju.]
+EU right of withdrawal|Право на отказ в ЕС|Atteikuma tiesības ES
+For most EU distance sales, consumers have 14 days from receiving the goods to notify the seller that they are withdrawing. [Confirm the notice process, return costs and any exception for goods made to the customer’s specifications or clearly personalised.]|При большинстве дистанционных покупок в ЕС потребитель может уведомить продавца об отказе в течение 14 дней после получения товара. [Уточните порядок уведомления, расходы на возврат и исключения для товаров по индивидуальным меркам или явно персонализированных товаров.]|Vairumā ES distances pirkumu patērētājs var paziņot pārdevējam par atteikumu 14 dienu laikā pēc preces saņemšanas. [Precizējiet paziņošanas kārtību, atgriešanas izmaksas un izņēmumus precēm, kas izgatavotas pēc klienta norādījumiem vai nepārprotami personalizētas.]
+Newsletter|Рассылка|Jaunumu vēstule
+Subscribe|Подписаться|Abonēt
+Confirm your subscription using the link in your email.|Подтвердите подписку по ссылке в письме.|Apstipriniet abonementu, izmantojot saiti e-pastā.
+Preview only. Newsletter sign-up is not available yet.|Предпросмотр. Подписка на рассылку пока недоступна.|Priekšskatījums. Pieteikšanās jaunumu saņemšanai vēl nav pieejama.
+Preview only. No confirmation email was sent.|Предпросмотр. Письмо для подтверждения не отправлено.|Priekšskatījums. Apstiprinājuma e-pasts netika nosūtīts.
+Check your inbox to confirm your subscription.|Проверьте почту, чтобы подтвердить подписку.|Pārbaudiet e-pastu, lai apstiprinātu abonementu.
+Care instructions|Уход|Kopšanas norādījumi
+Size guide|Как подобрать размер|Izmēru ceļvedis
+Hand wash in cool water with wool detergent. Press out water in a towel and dry flat.|Стирайте вручную в прохладной воде со средством для шерсти. Промокните полотенцем и сушите горизонтально.|Mazgājiet ar rokām vēsā ūdenī ar vilnai paredzētu līdzekli. Lieko ūdeni izspiediet dvielī un žāvējiet izklātu.
+Hand wash gently in cool water without rubbing. Reshape and dry flat.|Бережно стирайте вручную в прохладной воде без трения. Придайте форму и сушите горизонтально.|Saudzīgi mazgājiet ar rokām vēsā ūdenī bez beršanas. Atjaunojiet formu un žāvējiet izklātu.
+Air between wears. If needed, wash gently in cool water and dry flat without stretching.|Проветривайте после носки. При необходимости бережно стирайте в прохладной воде и сушите горизонтально, не растягивая.|Starp valkāšanas reizēm izvēdiniet. Ja nepieciešams, saudzīgi mazgājiet vēsā ūdenī un žāvējiet izklātu, neizstaipot.
+Spot clean first. If washing is needed, hand wash in cool water and dry flat away from direct heat.|Сначала очистите загрязнённое место. При необходимости выстирайте вручную в прохладной воде и сушите горизонтально вдали от источников тепла.|Vispirms tīriet traipu atsevišķi. Ja jāmazgā, dariet to ar rokām vēsā ūdenī un žāvējiet izklātu prom no tiešiem siltuma avotiem.
+Measure around your head just above your eyebrows and ears. Compare the circumference with the product measurements.|Измерьте обхват головы чуть выше бровей и ушей. Сравните его с размерами изделия.|Izmēriet galvas apkārtmēru nedaudz virs uzacīm un ausīm. Salīdziniet to ar izstrādājuma izmēriem.
+Length is measured end to end. Check the width and length against a scarf you already like.|Длина измеряется от края до края. Сравните ширину и длину с шарфом, который вам уже подходит.|Garumu mēra no viena gala līdz otram. Salīdziniet platumu un garumu ar šalli, kas jums jau patīk.
+Compare the width and length with the area you want to cover. Measure any extra drape separately.|Сравните ширину и длину с поверхностью, которую хотите накрыть. Отдельно учтите свисающие края.|Salīdziniet platumu un garumu ar laukumu, ko vēlaties pārklāt. Pārkares daļu izmēriet atsevišķi.
 `
 
 export const translations: Record<string, [string, string]> = Object.fromEntries(

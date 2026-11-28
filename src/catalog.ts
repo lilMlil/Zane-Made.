@@ -38,3 +38,17 @@ export const products: Product[] = [
 
 export const image = (key: string) => import.meta.env.BASE_URL + 'images/' + key + '.webp'
 export const findProduct = (id: string) => products.find(product => product.id === id)
+
+export const materialCare: Record<string, string> = {
+  'Merino wool': 'Hand wash in cool water with wool detergent. Press out water in a towel and dry flat.',
+  Lambswool: 'Hand wash gently in cool water without rubbing. Reshape and dry flat.',
+  'Alpaca and wool blend': 'Air between wears. If needed, wash gently in cool water and dry flat without stretching.',
+  'Wool and alpaca': 'Air between wears. If needed, wash gently in cool water and dry flat without stretching.',
+  'Undyed wool blend': 'Spot clean first. If washing is needed, hand wash in cool water and dry flat away from direct heat.',
+}
+
+export const sizeGuide: Partial<Record<Category, string>> = {
+  Hats: 'Measure around your head just above your eyebrows and ears. Compare the circumference with the product measurements.',
+  Scarves: 'Length is measured end to end. Check the width and length against a scarf you already like.',
+  Blankets: 'Compare the width and length with the area you want to cover. Measure any extra drape separately.',
+}

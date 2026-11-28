@@ -5,15 +5,28 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'rea
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { ArrowUpRight, Menu, Minus, Plus, Search, Settings2, ShoppingBag, UserRound, X } from 'lucide-react'
 import { brand, categories, findProduct, image, type Product } from './catalog'
+import { legalPages } from './legal-content'
 import { useCart } from './cart'
 import { submitForm, type FormKind } from './services'
 
 export function PageMeta({ title, description }: { title?: string, description?: string }) {
-  const { t } = usePreferences()
+  const { t, language } = usePreferences()
   useEffect(() => {
     document.title = title ? title + ' | ' + t('Zane Made') : t('Zane Made') + ' | ' + t('Handmade knitwear from Latvia')
-    document.querySelector('meta[name="description"]')?.setAttribute('content', description ?? t('Explore handmade knitwear from Zane Made, a small textile project in Latvia.'))
-  }, [title, description, t])
+    const summary = description ?? t('Explore handmade knitwear from Zane Made, a small textile project in Latvia.')
+    const metadata = {
+      'name="description"': summary,
+      'property="og:title"': document.title,
+      'property="og:description"': summary,
+      'property="og:site_name"': t('Zane Made'),
+      'property="og:locale"': { en: 'en_GB', lv: 'lv_LV', ru: 'ru_RU' }[language],
+      'name="twitter:title"': document.title,
+      'name="twitter:description"': summary,
+    }
+    for (const [selector, content] of Object.entries(metadata)) {
+      document.querySelector(`meta[${selector}]`)?.setAttribute('content', content)
+    }
+  }, [title, description, language, t])
   return null
 }
 
@@ -187,9 +200,21 @@ export function Form({ kind, children, button, className = '' }: { kind: FormKin
   </form>
 }
 
+function Newsletter() {
+  const { t } = usePreferences()
+  return <section className="container section">
+    <h2>{t('Newsletter')}</h2>
+    <p>{t(import.meta.env.VITE_FORM_ENDPOINT ? 'Confirm your subscription using the link in your email.' : 'Preview only. Newsletter sign-up is not available yet.')}</p>
+    <Form kind="newsletter" button={t('Subscribe')}>
+      <label>{t('Email address')}<input type="email" name="email" autoComplete="email" required /></label>
+      <Link className="text-link" to="/privacy">{t('Privacy Policy')}</Link>
+    </Form>
+  </section>
+}
+
 export function Footer() {
   const { t } = usePreferences()
-  return <footer className="footer">
+  return <><Newsletter /><footer className="footer">
     <div className="footer-grid">
       <div><Wordmark /><p>{t("Handmade knitwear and textiles from Latvia.")}</p></div>
       <div><h3>{t("Shop")}</h3><Link to="/shop">{t("All pieces")}</Link>{categories.map(({ name }) => <Link key={name} to={'/shop?category=' + name}>{t(name)}</Link>)}</div>
@@ -202,8 +227,9 @@ export function Footer() {
         <Link className="footer-question" to="/contact#question">{t("Ask a question")}</Link>
       </div>
     </div>
+    <nav className="footer-legal" aria-label={t("Legal information")}>{Object.entries(legalPages).map(([path, page]) => <Link key={path} to={path}>{t(page.title)}</Link>)}</nav>
     <div className="footer-bottom">© {new Date().getFullYear()}{" "}{t("Zane Made")}</div>
-  </footer>
+  </footer></>
 }
 
 export function CurrencySelect({ compact = false }: { compact?: boolean }) {

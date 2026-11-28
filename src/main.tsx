@@ -8,6 +8,8 @@ import { Checkout, Contact, CustomOrders, Shipping } from './forms'
 import { Collections, NotFound, ProductPage, Shop } from './shop'
 import { CartDrawer, Footer, Header } from './ui'
 import { CopyEditor } from './copy-editor'
+import { LegalPage } from './legal'
+import { legalPages, type LegalPath } from './legal-content'
 import { Account, Settings } from './account'
 import './styles.css'
 
@@ -47,6 +49,7 @@ function App() {
         <Route path="/edit-text" element={<CopyEditor />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/profile" element={<Account />} />
+        {(Object.keys(legalPages) as LegalPath[]).map(path => <Route key={path} path={path} element={<LegalPage path={path} />} />)}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </main>

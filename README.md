@@ -26,7 +26,7 @@ Open the URL printed by Vite. Run `npm run build` for TypeScript checking and a 
 - **Inventory and orders.** Connect a catalog and order backend. Validate product IDs, options, quantities and availability on the server and calculate all prices there. The current cart stores only product IDs, colors and quantities in browser storage.
 - **Checkout and payments.** Implement the `CommerceProvider` contract in [src/services.ts](src/services.ts), connect it to the checkout form, and redirect customers to a hosted payment page such as Stripe Checkout or Shopify. Verify payment-provider webhooks server-side before confirming orders. The preview checkout collects no payment details and does not retain or transmit delivery data.
 - **International sales.** Configure carrier rates, coverage, currency conversion and supported presentment currencies, tax and duty handling, delivery estimates, and tracking. The sample storefront displays EUR.
-- **Email and inquiries.** Set `VITE_FORM_ENDPOINT` to a form API controlled by the brand. The front end sends multipart form data with a `kind` of `contact` or `custom`. Validate all fields and uploads server-side, apply spam controls, and connect the endpoint to the appropriate mailbox. Until configured, the forms validate locally and explain the preview state.
+- **Email and inquiries.** Set `VITE_FORM_ENDPOINT` to a form API controlled by the brand. The front end sends multipart form data with a `kind` of `contact`, `custom` or `newsletter`. Validate all fields and uploads server-side, apply spam controls, and connect the endpoint to the appropriate mailbox. Until configured, the forms validate locally and explain the preview state.
 - **Launch content.** Replace all sample products and placeholder details. Review and finalize the Shipping & Returns page before accepting orders.
 
 ## Settings and profiles
@@ -49,3 +49,10 @@ Open `/edit-text` from Settings. Find a phrase using the search box, select its 
 Use Download changes to export the draft as JSON, or Import changes to merge it into another browser. To publish, merge the exported per-language entries into `src/published-copy.json`, then build and deploy. Keep placeholders such as `{price}` intact. The editor changes copy, including names, descriptions, labels and notices. Product prices, inventory, and other structured data are managed separately.
 
 Set `showProductPlaceholders` to `false` in `src/storefront.ts` when the individual product names, descriptions and prices are ready to display. The template labels are editable in the text editor.
+
+## Launch checklist and hosting
+
+- Complete the Privacy Policy, Terms of Sale, Legal Notice and the Shipping & Returns draft with the seller's details and reviewed policies before accepting live orders. Verify fiber care and sizing against the actual products.
+- `.openai/hosting.json` identifies the existing ChatGPT Sites preview and its output directory. GitHub Pages uses `.github/workflows/pages.yml`. Set the optional build-time `ZANE_SITE_URL` to the canonical site URL with a trailing slash if the public address changes. On a subpath such as GitHub Pages, submit the generated sitemap URL directly to search engines. Crawlers read robots.txt from the host root.
+- Use `.env.example` as a template. The form API must accept the additional `newsletter` kind with an `email` field. The server must send a time-limited confirmation link and activate the subscription only after confirmation. Custom-order `budget` values are `under-low`, `low-middle`, `middle-high`, `over-high` or empty. Interpret them using the EUR thresholds in `src/catalog.ts` regardless of display currency.
+- Run `npm run lint` and `npm test` before publishing. If analytics is added later, implement consent first and load analytics only after opt-in.

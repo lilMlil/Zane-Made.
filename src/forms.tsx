@@ -61,6 +61,7 @@ const draftPolicies = [
   ['Delivery estimates', 'Add estimated transit times by destination and carrier, separate from handmade production time.'],
   ['Tracking', 'Confirm which shipping options include tracking and how customers will get updates.'],
   ['Customs duties', 'Confirm how import taxes, duties, and handling fees are shown and collected for each market.'],
+  ['EU right of withdrawal', 'For most EU distance sales, consumers have 14 days from receiving the goods to notify the seller that they are withdrawing. [Confirm the notice process, return costs and any exception for goods made to the customer’s specifications or clearly personalised.]'],
   ['Returns', 'Review applicable consumer rights and finalize return windows, conditions, costs, and custom-order terms.'],
   ['Damaged items', 'Specify the contact process, supporting photos, and the remedies available to customers.'],
   ['Contacting Zane Made', 'Add the monitored support address and expected response time.'],
