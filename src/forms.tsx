@@ -1,10 +1,9 @@
-import { baseCopy } from './copy'
 import { productPlaceholders, showPhotography, showProductPlaceholders } from './storefront'
 import { usePreferences } from './preferences'
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from './cart'
-import { brand, categories, findProduct, image } from './catalog'
+import { priceThresholds, brand, categories, findProduct, image } from './catalog'
 import { CurrencyNote, Form, PageMeta } from './ui'
 
 const faq = [
@@ -24,7 +23,7 @@ export function CustomOrders() {
         <label>{t("Email address")}<input type="email" required name="email" autoComplete="email" /></label>
         <label>{t("Product type")}<select name="product" required defaultValue=""><option value="" disabled>{t("Choose a piece")}</option>{categories.map(category => <option key={category.name} value={category.name}>{t(category.label)}</option>)}<option value="other">{t("Something else")}</option></select></label>
         <div className="fields-two"><label>{t("Color preferences")}<input name="colors" required placeholder={t("e.g. Oatmeal and olive")} maxLength={150} /></label><label>{t("Desired dimensions")}<input name="dimensions" required placeholder={t("e.g. 30 × 180 cm")} maxLength={150} /></label></div>
-        <label>{t("Budget range (optional)")}<select name="budget" defaultValue=""><option value="">{t("Select a range")}</option><option value="Under €75">{t("Under {price}").replace("{price}", money.price(75))}</option><option value="€75–€125">{t("{low} – {high}").replace("{low}", money.price(75)).replace("{high}", money.price(125))}</option><option value="€125–€200">{t("{low} – {high}").replace("{low}", money.price(125)).replace("{high}", money.price(200))}</option><option value="Over €200">{t("Over {price}").replace("{price}", money.price(200))}</option></select></label>
+        <label>{t("Budget range (optional)")}<select name="budget" defaultValue=""><option value="">{t("Select a range")}</option><option value="under-low">{t("Under {price}").replace("{price}", money.price(priceThresholds.low))}</option><option value="low-middle">{t("{low} – {high}").replace("{low}", money.price(priceThresholds.low)).replace("{high}", money.price(priceThresholds.middle))}</option><option value="middle-high">{t("{low} – {high}").replace("{low}", money.price(priceThresholds.middle)).replace("{high}", money.price(priceThresholds.high))}</option><option value="over-high">{t("Over {price}").replace("{price}", money.price(priceThresholds.high))}</option></select></label>
         <label>{t("Tell us about your idea")}<textarea name="description" rows={5} required maxLength={3000} /></label>
         <label>{t("Inspiration image (optional)")}<input type="file" name="inspiration" accept="image/jpeg,image/png,image/webp" /><small>{t("JPG, PNG or WebP, up to 5 MB.")}</small></label>
         <p className="muted">{!import.meta.env.VITE_FORM_ENDPOINT && t('Preview form. Inquiries are not sent.')}</p>
@@ -34,13 +33,13 @@ export function CustomOrders() {
 }
 
 export function Contact() {
-  const { t, language } = usePreferences()
+  const { t } = usePreferences()
   return <div className="container page">
     <PageMeta title={t("Contact")} description={t("Get in touch with Zane Made or find answers to common questions about handmade knitwear.")} />
     <div className="page-heading"><h1>{t("Get in touch.")}</h1><p>{t("Questions about a piece, the making process, or a gift idea?")}</p></div>
     <div className="form-layout contact-layout">
       <div><h2>{t("Contact details")}</h2><p>{t(brand.email).endsWith('.example') ? t(brand.email) + ' (' + t('placeholder') + ')' : <a className="text-link" href={'mailto:' + t(brand.email)}>{t(brand.email)}</a>}</p>
-        <Link to="/custom" className="text-link">{t("Request a Custom Piece").trim() || baseCopy("Request a Custom Piece", language)}</Link></div>
+        <Link to="/custom" className="text-link">{t("Request a Custom Piece", true)}</Link></div>
       <section id="question" aria-labelledby="question-title">
         <h2 id="question-title">{t("Ask a question")}</h2>
         <Form kind="contact" button={t("Send message")}>

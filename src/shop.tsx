@@ -3,7 +3,7 @@ import { usePreferences } from './preferences'
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { ChevronRight, Search, ShoppingBag, X } from 'lucide-react'
-import { categories, findProduct, image, products, type Product } from './catalog'
+import { priceThresholds, categories, findProduct, image, products, type Product } from './catalog'
 import { useCart } from './cart'
 import { CategoryGrid, CurrencyNote, CurrencySelect, PageMeta, ProductGrid, Quantity } from './ui'
 
@@ -26,7 +26,7 @@ function Filters({ count }: { count: number }) {
           <input type="search" aria-label={t("Search products")} placeholder={t("Search")} value={params.get('q') ?? ''} onChange={event => filter('q', event.target.value)} />
         </div>
         <select aria-label={t("Price")} title={t("Price")} value={params.get('price') ?? ''} onChange={event => filter('price', event.target.value)}>
-          <option value="">{t("Price")}</option><option value="under">{t("Under {price}").replace("{price}", money.price(75))}</option><option value="mid">{t("{low} – {high}").replace("{low}", money.price(75)).replace("{high}", money.price(125))}</option><option value="over">{t("Over {price}").replace("{price}", money.price(125))}</option>
+          <option value="">{t("Price")}</option><option value="under">{t("Under {price}").replace("{price}", money.price(priceThresholds.low))}</option><option value="mid">{t("{low} – {high}").replace("{low}", money.price(priceThresholds.low)).replace("{high}", money.price(priceThresholds.middle))}</option><option value="over">{t("Over {price}").replace("{price}", money.price(priceThresholds.middle))}</option>
         </select>
         <select aria-label={t("Product categories")} title={t("Product categories")} value={params.get('category') ?? ''} onChange={event => filter('category', event.target.value)}>
           <option value="">{t("Categories")}</option>
@@ -56,9 +56,9 @@ export function Shop() {
   const results = products.filter(product =>
     (!category || product.category === category) &&
     (!query || [product.name, ...(showProductPlaceholders ? [productPlaceholders.description] : []), product.category ?? "", product.material, ...product.colors].flatMap(value => [value, t(value)]).join(' ').toLowerCase().includes(query)) &&
-    (price !== 'under' || product.price < 75) &&
-    (price !== 'mid' || (product.price >= 75 && product.price <= 125)) &&
-    (price !== 'over' || product.price > 125),
+    (price !== 'under' || product.price < priceThresholds.low) &&
+    (price !== 'mid' || (product.price >= priceThresholds.low && product.price <= priceThresholds.middle)) &&
+    (price !== 'over' || product.price > priceThresholds.middle),
   )
   if (sort === 'asc') results.sort((a, b) => a.price - b.price)
   if (sort === 'desc') results.sort((a, b) => b.price - a.price)
@@ -93,7 +93,7 @@ function ProductDetail({ product, openCart }: { product: Product, openCart: () =
   const [quantity, setQuantity] = useState(1)
   const [color, setColor] = useState(product.colors[0])
   const { add } = useCart()
-  const name = t(showProductPlaceholders ? product.category ?? "Shop" : product.name)
+  const name = t(product.name).trim() || t("Product {id}").replace("{id}", product.id)
   const description = t(showProductPlaceholders ? productPlaceholders.description : product.description)
   return <div className="container page product-page">
     <PageMeta title={name} description={description} />

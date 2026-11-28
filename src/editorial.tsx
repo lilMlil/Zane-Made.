@@ -1,4 +1,3 @@
-import { baseCopy } from './copy'
 import { showPhotography } from './storefront'
 import { usePreferences } from './preferences'
 import { Link } from 'react-router-dom'
@@ -9,7 +8,7 @@ import { CategoryGrid, PageMeta, ProductGrid } from './ui'
 const intro = 'Zane Made is a small handmade project built around the beauty of creating things by hand. Every piece takes time, care, and a love for textures, colors, and the little details that make something feel special.'
 
 export function Home() {
-  const { t, language } = usePreferences()
+  const { t } = usePreferences()
   return <>
     <PageMeta />
     <section className={showPhotography ? "hero" : "hero without-photos"}>
@@ -36,7 +35,7 @@ export function Home() {
       <div className="section-heading"><h2>{t("Find your fit.")}</h2><Link className="text-link" to="/collections">{t("View collections")}{" "}<ArrowUpRight size={15} /></Link></div>
       <CategoryGrid />
     </section>
-    <section className="custom-banner"><p className="eyebrow">{t("Custom orders")}</p><h2>{t("Dream it.")}{" "}<em>{t("We’ll make it.")}</em></h2><p>{t("Have a specific color, size, or idea in mind? Let’s create something made just for you.")}</p><Link className="button" to="/custom">{t("Request a Custom Piece").trim() || baseCopy("Request a Custom Piece", language)}</Link></section>
+    <section className="custom-banner"><p className="eyebrow">{t("Custom orders")}</p><h2>{t("Dream it.")}{" "}<em>{t("We’ll make it.")}</em></h2><p>{t("Have a specific color, size, or idea in mind? Let’s create something made just for you.")}</p><Link className="button" to="/custom">{t("Request a Custom Piece", true)}</Link></section>
   </>
 }
 

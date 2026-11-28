@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { createMoneyFormatter, isCurrency, type Currency } from './currency'
-import { defaultCopy, readDraft, saveDraft, type CopyOverrides } from './copy'
+import { baseCopy, defaultCopy, readDraft, saveDraft, type CopyOverrides } from './copy'
 
 export type Language = 'en' | 'ru' | 'lv'
 export type Theme = 'light' | 'dark' | 'system'
@@ -27,7 +27,7 @@ const Context = createContext({
   money: createMoneyFormatter(defaults.language, defaults.currency),
   draft: {} as CopyOverrides,
   updateDraft: (_draft: CopyOverrides) => {},
-  t: (message: string) => message,
+  t: (message: string, _required = false) => message,
 })
 
 export function PreferencesProvider({ children }: { children: ReactNode }) {
@@ -56,7 +56,10 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       saveDraft(next)
       setDraft(next)
     },
-    t: message => draft[preferences.language]?.[message] ?? defaultCopy(message, preferences.language),
+    t: (message, required = false) => {
+      const value = draft[preferences.language]?.[message] ?? defaultCopy(message, preferences.language)
+      return required && !value.trim() ? baseCopy(message, preferences.language) : value
+    },
   }}>{children}</Context.Provider>
 }
 

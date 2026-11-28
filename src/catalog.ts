@@ -1,3 +1,5 @@
+export const priceThresholds = { low: 75, middle: 125, high: 200 } as const
+
 export const brand = {
   announcement: 'Handmade with love · Shipping worldwide',
   email: 'hello@zanemade.example',
